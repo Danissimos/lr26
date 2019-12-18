@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Лабораторная 26</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+	#img{
+		background-image:url(fon.jpg);
+	}
+	progress {
+      width: 5%;
+    }
+  </style>
+</head>
+<body id="img"><center>
+    <div class="div3">
+        <ul class="topmenu">
+          <li class=".warning"><a href="https://github.com">Перейти на github</a></li>
+          <li class=".warning"><a href="" class="down">Выберите фоновое изображение</a>
+            <ul class="submenu">
+              <li><input value="Белые обои" onclick="f1()" type="button"></li>
+              <li><input value="Рисунок" onclick="f2()" type="button"></li>
+              <li><input value="Планеты" onclick="f3()" type="button"></li>
+              <li><input value="Природа" onclick="f4()" type="button"></li>
+              <li><input value="Поздравление" onclick="f5()" type="button"></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+<br><br>
+	<progress id="elem"> </progress>
+
+  <script>
+    elem.onclick = function() {
+      animate({
+        duration: 1000,
+        timing: function(timeFraction) {
+          return timeFraction;
+        },
+        draw: function(progress) {
+          elem.style.width = progress * 100 + '%';
+        }
+      });
+    };
+  </script>
+
+</center></body>
+<script src="script.js"></script>
+</html>
